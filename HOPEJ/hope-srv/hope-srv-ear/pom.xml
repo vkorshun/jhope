@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>hope-srv</artifactId>
+        <groupId>com.gmail.vkorshun</groupId>
+        <version>1.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <groupId>com.gmail.vkorshun</groupId>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>hope-srv-ear</artifactId>
+    <packaging>ear</packaging>
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.gmail.vkorshun</groupId>
+			<artifactId>hope-srv-war</artifactId>
+			<version>1.0</version>
+			<type>war</type>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gmail.vkorshun</groupId>
+			<artifactId>com.gmail.vkorshun.vklib</artifactId>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+		</dependency>
+
+	</dependencies>
+
+
+	<build>
+		<finalName>hope-srv-ear</finalName>
+		<plugins>
+			<!--plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<defaultJavaBundleDir>lib/</defaultJavaBundleDir>
+					<version>6</version>
+					<modules>
+
+						<ejbModule>
+							<groupId>ua.com.mikko</groupId>
+							<artifactId>mikko-common-ejb</artifactId>
+							<bundleFileName>mikko-common-ejb.jar</bundleFileName>
+						</ejbModule>
+
+						<warModule>
+							<groupId>ua.com.mikko</groupId>
+							<artifactId>mikko-common-war</artifactId>
+							<bundleFileName>mikko-common-war.war</bundleFileName>
+						</warModule>
+
+						<jarModule>
+							<groupId>ua.com.mikko</groupId>
+							<artifactId>mikko-interfaces</artifactId>
+							<bundleFileName>mikko-interfaces.jar</bundleFileName>
+						</jarModule>
+					</modules>
+				</configuration>
+			</plugin-->
+
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<outputDirectory>${basedir}/target</outputDirectory>
+				</configuration>
+			</plugin>
+		</plugins>
+
+		<resources>
+			<resource>
+				<filtering>true</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+	</build>
+
+</project>

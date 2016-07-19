@@ -1,0 +1,4 @@
+	<task:scheduled-tasks scheduler="myScheduler">
+		<task:scheduled ref="kursLoadBean" method="loadNbu" cron="0 0-59 9-23 * * * "  />
+		<task:scheduled ref="kursLoadBean" method="loadCbRu" cron="0 10,35 9-23 * * * "  />
+	</task:scheduled-tasks>
